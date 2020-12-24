@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>栈</title>
+</head>
+<body>
+
+<script>
+
+
+    function Stack(items) {
+        this.items = items;
+    }
+
+    /**
+     * 添加一个或多个元素到栈顶
+     */
+    Stack.prototype.push = function () {
+        Array.prototype.push.apply(this.items, arguments);
+    };
+
+    /**
+     * 移除栈顶元素，同时返回被移除的元素
+     * @returns String
+     */
+    Stack.prototype.pop = function () {
+        return this.items.pop();
+    };
+
+
+    Stack.prototype.toString = function () {
+        return this.items.join();
+    };
+
+    var stack = new Stack([]);
+    stack.push("1", "2");
+
+    // console.log(stack.pop());
+</script>
+</body>
+</html>
