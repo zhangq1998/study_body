@@ -32,8 +32,31 @@
 	* 返回栈顶元素，不对栈作任何修改
 	*/
 	Stack.prototype.peek = function () {
-		return this.items[length - 1];
+		return this.items[this.items.length - 1];
 	};
+
+    /**
+     * 如果栈里没任何元素返回true，有返回false
+     * @returns {boolean}
+     */
+	Stack.prototype.isEmpty = function () {
+	    return this.items.length === 0;
+    };
+
+    /**
+     * 清空栈
+     */
+	Stack.prototype.clear = function () {
+	    this.items.length = 0;
+    };
+
+    /**
+     * 返回栈里元素个数
+     * @returns {*}
+     */
+	Stack.prototype.size = function () {
+	    return this.items.length;
+    };
 
     Stack.prototype.toString = function () {
         return this.items.join();
@@ -44,7 +67,11 @@
 
     // console.log(stack.pop());
 	
-	console.log(stack.peek());
+	// console.log(stack.peek());
+    // stack.clear();
+    // console.log(stack.isEmpty());
+    console.log(stack.size());
+    console.log("当前栈：" + stack.toString());
 </script>
 </body>
 </html>
